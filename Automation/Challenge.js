@@ -3,30 +3,45 @@ import { Selector } from 'testcafe';
 fixture('Login').page('www.jobjack.co.za');
 
 // Navigation to Registration page
-const jobSeeker = Selector('a').withText('Job seeker');
+const jobSeeker = Selector('a')
+    .withText('Job seeker');
 const findAJob = Selector('a')
     .withText('Find a job')
     .withAttribute('class','btn btn-jj-3 mb-0 jj-bg-green');
 
 // Registration page elements
-const firstName = Selector('input').withAttribute('formcontrolname','firstName')
-const lastName = Selector('input').withAttribute('formcontrolname','lastName')
-const mobileNumber = Selector('input').withAttribute('formcontrolname','phoneNumber');
-const whatsAppNumber = Selector('ng-select').withAttribute('formcontrolname','hasWhatsapp');
-const sameAsMobileNumber = Selector('span').withText('Same as mobile number');
-const spanWhatsAppNotification = Selector('ng-select').withAttribute('formcontrolname','whatsappOptIn');
-const whatsAppNotificationYes = Selector('span').withText('Yes');
-const email = Selector('input').withAttribute('formcontrolname','email');
-const spanLocation = Selector('ng-select').withAttribute('placeholder','Type and select from suggested list');
-const divOption = Selector('div').withAttribute('role','option');
-const password = Selector('input').withAttribute('formcontrolname','password')
-const passwordReveal = Selector('button').withAttribute('id','button_addon2')
-const spanHowDidYouHear = Selector('ng-select').withAttribute('placeholder','How did you hear about us?')
-const radio = Selector('div').withAttribute('class','ng-option').withText('Radio')
+const firstName = Selector('input')
+    .withAttribute('formcontrolname','firstName')
+const lastName = Selector('input')
+    .withAttribute('formcontrolname','lastName')
+const mobileNumber = Selector('input')
+    .withAttribute('formcontrolname','phoneNumber');
+const whatsAppNumber = Selector('ng-select')
+    .withAttribute('formcontrolname','hasWhatsapp');
+const sameAsMobileNumber = Selector('span')
+    .withText('Same as mobile number');
+const spanWhatsAppNotification = Selector('ng-select')
+    .withAttribute('formcontrolname','whatsappOptIn');
+const whatsAppNotificationYes = Selector('span')
+    .withText('Yes');
+const email = Selector('input')
+    .withAttribute('formcontrolname','email');
+const spanLocation = Selector('ng-select')
+    .withAttribute('placeholder','Type and select from suggested list');
+const divOption = Selector('div')
+    .withAttribute('role','option');
+const password = Selector('input')
+    .withAttribute('formcontrolname','password')
+const passwordReveal = Selector('button')
+    .withAttribute('id','button_addon2')
+const spanHowDidYouHear = Selector('ng-select')
+    .withAttribute('placeholder','How did you hear about us?')
+const radio = Selector('div')
+    .withAttribute('class','ng-option').withText('Radio')
+const register = Selector('button')
+    .withText('Register');
 
-const register = Selector('button').withText('Register');
-
-test('My first test', async t => {
+test('navigateAndFillInRegistrationDetails', async t => {
     await t.maximizeWindow()
 
     // Navigate to registration
